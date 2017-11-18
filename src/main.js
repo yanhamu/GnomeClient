@@ -21,7 +21,7 @@ var routes = [
     { path: '/accounts/:id/transactions', component: TransactionManager, props: true },
     { path: '/accounts', component: Accounts },
     { path: '/accounts/:id', component: AccountDetail, props: true },
-    { path: '/home', component: LogIn },
+    { path: '/home', name: 'home', component: LogIn },
     { path: '/report-wizard', component: ReportWizard },
     { path: '/report-overview', component: ReportOverview },
     { path: '/report-view/:id', name: 'report-view', component: ReportView, props: true },
@@ -69,6 +69,15 @@ Vue.http.interceptors.push(function (request, next) {
         request.headers.set('Authorization', store.getToken());
     }
     next();
+});
+
+Vue.http.interceptors.push(function (request, next) {
+    next(function (response) {
+        if (response.status == 401) {
+            store.setToken(null);
+            router.push({ name: "home" });
+        }
+    });
 });
 
 Vue.http.interceptors.push(function (request, next) {
