@@ -9,8 +9,12 @@ import LogIn from './LogIn.vue';
 import Accounts from './accounts/Accounts.vue';
 import AccountDetail from './accounts/AccountDetail.vue';
 import TransactionManager from './transactions/TransactionManager.vue';
+import ReportWizard from './reports/ReportWizard.vue';
+import ReportOverview from './reports/ReportOverview.vue';
+import ReportView from './reports/ReportView.vue';
 
-//import 'bootstrap';
+import 'jquery';
+import 'bootstrap';
 import moment from 'moment';
 
 var routes = [
@@ -18,6 +22,9 @@ var routes = [
     { path: '/accounts', component: Accounts },
     { path: '/accounts/:id', component: AccountDetail, props: true },
     { path: '/home', component: LogIn },
+    { path: '/report-wizard', component: ReportWizard },
+    { path: '/report-overview', component: ReportOverview },
+    { path: '/report-view/:id', name: 'report-view', component: ReportView, props: true },
     { path: '*', redirect: '/home' }
 ];
 
