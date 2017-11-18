@@ -25,7 +25,7 @@
                             <router-link to="/configuration">config-query</router-link>
                         </li>
                         <li>
-                            <router-link to="/expression-builder-wizard">config-expressions</router-link>
+                            <router-link to="/expression-wizard">config-expressions</router-link>
                         </li>
                     </ul>
                 </li>

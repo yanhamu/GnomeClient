@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     viewReport: function(r) {
-      router.push({ name: "report-view", params: { id: r.id } });
+      this.$router.push({ name: "report-view", params: { id: r.id } });
     }
   },
   components: { ReportList }

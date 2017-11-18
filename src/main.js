@@ -9,6 +9,7 @@ import LogIn from './LogIn.vue';
 import Accounts from './accounts/Accounts.vue';
 import AccountDetail from './accounts/AccountDetail.vue';
 import TransactionManager from './transactions/TransactionManager.vue';
+import ExpressionWizard from './expressions/ExpressionWizard.vue';
 import ReportWizard from './reports/ReportWizard.vue';
 import ReportOverview from './reports/ReportOverview.vue';
 import ReportView from './reports/ReportView.vue';
@@ -24,6 +25,7 @@ var routes = [
     { path: '/accounts/:id', component: AccountDetail, props: true },
     { path: '/home', name: 'home', component: LogIn },
     { path: '/configuration', component: QueryWizard },
+    { path: '/expression-wizard', component: ExpressionWizard },
     { path: '/report-wizard', component: ReportWizard },
     { path: '/report-overview', component: ReportOverview },
     { path: '/report-view/:id', name: 'report-view', component: ReportView, props: true },
