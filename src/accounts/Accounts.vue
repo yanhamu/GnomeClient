@@ -3,7 +3,7 @@
     <h3>accounts</h3>
 
     <table class="table table-striped">
-            <tr v-for="account in accounts">
+            <tr v-for="account in accounts" :key="account.id">
                 <td>
                     <router-link :to = "'/accounts/' + account.id + '/transactions/'">{{ account.name }}</router-link>
                 </td>

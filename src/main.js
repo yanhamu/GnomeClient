@@ -6,12 +6,16 @@ Vue.use(VueRouter);
 
 import App from './App.vue';
 import LogIn from './LogIn.vue';
-import Accounts from './account/Accounts.vue';
+import Accounts from './accounts/Accounts.vue';
+import AccountDetail from './accounts/AccountDetail.vue';
+import TransactionManager from './transactions/TransactionManager.vue';
 
 import 'bootstrap'
 
 var routes = [
+    { path: '/accounts/:id/transactions', component: TransactionManager, props: true },
     { path: '/accounts', component: Accounts },
+    { path: '/accounts/:id', component: AccountDetail, props: true },
     { path: '/home', component: LogIn },
     { path: '*', redirect: '/home' }
 ];
@@ -49,12 +53,31 @@ if (t != null) {
 
 Vue.use(VueResource);
 Vue.http.options.root = 'http://localhost:9020/api';
+
+// interceptors
 Vue.http.interceptors.push(function (request, next) {
     var token = store.getToken();
     if (token != null) {
         request.headers.set('Authorization', store.getToken());
     }
     next();
+});
+
+Vue.http.interceptors.push(function (request, next) {
+    next(function (res) {
+        console.log(res);
+    });
+});
+
+// filters
+Vue.filter('formatDate', function (value) {
+    if (value)
+        return moment(String(value)).format('YYYY-MM-DD');
+});
+
+Vue.filter('yearMonth', function (value) {
+    if (value)
+        return moment(String(value)).format('YYYY/MM');
 });
 
 new Vue({
