@@ -6,10 +6,12 @@ Vue.use(VueRouter);
 
 import App from './App.vue';
 import LogIn from './LogIn.vue';
+import Accounts from './account/Accounts.vue';
 
 import 'bootstrap'
 
 var routes = [
+    { path: '/accounts', component: Accounts },
     { path: '/home', component: LogIn },
     { path: '*', redirect: '/home' }
 ];
@@ -45,11 +47,18 @@ if (t != null) {
     store.setToken(t);
 }
 
+Vue.use(VueResource);
+Vue.http.options.root = 'http://localhost:9020/api';
+Vue.http.interceptors.push(function (request, next) {
+    var token = store.getToken();
+    if (token != null) {
+        request.headers.set('Authorization', store.getToken());
+    }
+    next();
+});
+
 new Vue({
     el: '#app',
     router: router,
     render: h => h(App)
 });
-
-Vue.use(VueResource);
-Vue.http.options.root = 'http://localhost:9020/api';
