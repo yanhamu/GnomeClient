@@ -17,6 +17,7 @@ import QueryWizard from './queries/QueryWizard.vue';
 
 import 'jquery';
 import 'bootstrap';
+import 'bootstrap-daterangepicker';
 import moment from 'moment';
 
 var routes = [
