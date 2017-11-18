@@ -31,5 +31,7 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["transaction"]
+};
 </script>

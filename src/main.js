@@ -10,7 +10,8 @@ import Accounts from './accounts/Accounts.vue';
 import AccountDetail from './accounts/AccountDetail.vue';
 import TransactionManager from './transactions/TransactionManager.vue';
 
-import 'bootstrap'
+//import 'bootstrap';
+import moment from 'moment';
 
 var routes = [
     { path: '/accounts/:id/transactions', component: TransactionManager, props: true },

@@ -15,6 +15,7 @@
 
 <script>
 import moment from 'moment';
+import daterangepicker from 'bootstrap-daterangepicker';
 
 export default {
   created() {

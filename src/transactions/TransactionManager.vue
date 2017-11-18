@@ -31,7 +31,9 @@
 </template>
 
 <script>
-import TransactionFilter from './TransactionFilter.vue';
+import TransactionFilter from "./TransactionFilter.vue";
+import TransactionList from "./TransactionList.vue";
+import TransactionDetail from "./TransactionDetail.vue";
 
 export default {
   props: ["id"],
@@ -52,6 +54,6 @@ export default {
       this.selectedTransaction = data;
     }
   },
-  components: { TransactionFilter }
+  components: { TransactionFilter, TransactionList, TransactionDetail }
 };
 </script>
