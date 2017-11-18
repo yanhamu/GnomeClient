@@ -4,11 +4,15 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 import App from './App.vue';
+import LogIn from './LogIn.vue';
 
 import 'bootstrap'
 
 
-var routes = [];
+var routes = [
+  { path: '/home', component: LogIn },
+  { path: '*', redirect: '/home' }
+];
 
 var router = new VueRouter({
   routes: routes
