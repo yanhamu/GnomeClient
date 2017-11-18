@@ -2,15 +2,24 @@
 <div class = "container-fluid">
     <h3>accounts</h3>
 
-    <table class="table table-striped">
-            <tr v-for="account in accounts" :key="account.id">
-                <td>
-                    <router-link :to = "'/accounts/' + account.id + '/transactions/'">{{ account.name }}</router-link>
-                </td>
-                <td>
-                    <router-link :to = "'/accounts/' + account.id">edit</router-link>
-                </td>
-            </tr>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <td>account name</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="account in accounts" :key="account.id">
+          <td>
+            <router-link :to = "'/accounts/' + account.id + '/transactions/'">{{ account.name }}</router-link>
+          </td>
+          <td>
+            <router-link class="btn btn-primary" :to = "'/accounts/' + account.id">
+              <span class="glyphicon glyphicon-pencil" />
+            </router-link>
+          </td>
+        </tr>
+      </tbody>
     </table>
     <input class='btn btn-primary' value='create new' v-on:click="create"/>
 </div>

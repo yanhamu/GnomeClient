@@ -65,7 +65,7 @@ if (t != null) {
 }
 
 Vue.use(VueResource);
-Vue.http.options.root = 'http://localhost:9020/api';
+Vue.http.options.root = 'http://gnome.api.local/api';
 
 // interceptors
 Vue.http.interceptors.push(function (request, next) {

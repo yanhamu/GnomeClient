@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <navbar-registered v-if="state.isAuthetnicated"></navbar-registered>
     <navbar-anonymous v-else></navbar-anonymous>
     <router-view></router-view>
