@@ -12,6 +12,7 @@ import TransactionManager from './transactions/TransactionManager.vue';
 import ReportWizard from './reports/ReportWizard.vue';
 import ReportOverview from './reports/ReportOverview.vue';
 import ReportView from './reports/ReportView.vue';
+import QueryWizard from './queries/QueryWizard.vue';
 
 import 'jquery';
 import 'bootstrap';
@@ -22,6 +23,7 @@ var routes = [
     { path: '/accounts', component: Accounts },
     { path: '/accounts/:id', component: AccountDetail, props: true },
     { path: '/home', name: 'home', component: LogIn },
+    { path: '/configuration', component: QueryWizard },
     { path: '/report-wizard', component: ReportWizard },
     { path: '/report-overview', component: ReportOverview },
     { path: '/report-view/:id', name: 'report-view', component: ReportView, props: true },

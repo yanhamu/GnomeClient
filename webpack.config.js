@@ -16,7 +16,7 @@ module.exports = {
           'vue-style-loader',
           'css-loader'
         ],
-      },      {
+      }, {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
@@ -54,11 +54,11 @@ module.exports = {
     hints: false
   },
   devtool: '#eval-source-map',
-  plugins:[
+  plugins: [
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
-     })
+    })
   ]
 }
 

@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="form-group row">
-        <label for="token" class="col-sm-2 col-form-label">Token</label>
+        <label for="token" class="col-sm-2 col-form-label"></label>
         <div class="col-sm-10">
             <input value="save" class="btn btn-primary btn-block" v-on:click="save" />
         </div>

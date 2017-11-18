@@ -15,6 +15,9 @@
 </template>
 
 <script>
+import moment from "moment";
+import TransactionList from "./../transactions/TransactionList.vue";
+
 export default {
   data: function() {
     return {
@@ -57,6 +60,7 @@ export default {
     selectTransaction: function(data) {
       this.selectedTransaction = data;
     }
-  }
+  },
+  components: { TransactionList }
 };
 </script>

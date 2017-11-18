@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import ExpressionList from "./../expressions/ExpressionList.vue";
+
 export default {
   data: function() {
     return {
@@ -38,6 +40,7 @@ export default {
         this.query.excludeExpressions.push(e);
       }
     }
-  }
+  },
+  components: { ExpressionList }
 };
 </script>

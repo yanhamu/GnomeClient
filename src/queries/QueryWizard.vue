@@ -33,6 +33,13 @@
 </template>
 
 <script>
+import QueryList from "./QueryList.vue";
+import QueryAccounts from "./QueryAccounts.vue";
+import QueryExpressions from "./QueryExpressions.vue";
+import QueryPreview from "./QueryPreview.vue";
+import QuerySave from "./QuerySave.vue";
+import QuerySummary from "./QuerySummary.vue";
+
 export default {
   data: function() {
     return {
@@ -96,6 +103,14 @@ export default {
         this.next();
       });
     }
+  },
+  components: {
+    QueryList,
+    QueryAccounts,
+    QueryExpressions,
+    QueryPreview,
+    QuerySummary,
+    QuerySave
   }
 };
 </script>
