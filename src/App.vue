@@ -1,22 +1,26 @@
 <template>
   <div id="app">
-    <navbar-anonymous></navbar-anonymous>
+    <navbar-registered v-if="state.isAuthetnicated"></navbar-registered>
+    <navbar-anonymous v-else></navbar-anonymous>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import NavbarRegistered from "./NavbarRegistered.vue";
 import NavbarAnonymous from "./NavbarAnonymous.vue";
+import { store } from "./main.js";
 
 export default {
   name: "app",
   data() {
     return {
-      msg: "Welcome to Your Vue.js App"
+      state: store.state
     };
   },
   components: {
-    NavbarAnonymous
+    NavbarAnonymous,
+    NavbarRegistered
   }
 };
 </script>

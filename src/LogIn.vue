@@ -29,35 +29,39 @@
   </div>
 </template>
 <script>
+
+import {store} from './main.js'
+
 export default {
   name: "log-in",
   data() {
-        return {
-            loginEmail: '',
-            loginPassword: '',
-            registerEmail: '',
-            registerPassword: ''
-        }
-    },
-    methods: {
-        login: function () {
-            var data = { username: this.loginEmail, password: this.loginPassword };
-            this.$http.post('gettoken', data, { emulateJSON: true })
-                .then(res => {
-                    store.setToken(res.body.access_token);
-                }, res => {
-                    store.setToken(null);
-                });
+    return {
+      loginEmail: "",
+      loginPassword: "",
+      registerEmail: "",
+      registerPassword: ""
+    };
+  },
+  methods: {
+    login: function() {
+      var data = { username: this.loginEmail, password: this.loginPassword };
+      this.$http.post("gettoken", data, { emulateJSON: true }).then(
+        res => {
+          store.setToken(res.body.access_token);
         },
-        register: function () {
-            var data = { email: this.registerEmail, password: this.registerPassword };
-            this.$http.post('users', data)
-                .then(res => {
-                    this.loginEmail = this.registerEmail;
-                    this.loginPassword = this.registerPassword;
-                    this.login();
-                });
+        res => {
+          store.setToken(null);
         }
+      );
+    },
+    register: function() {
+      var data = { email: this.registerEmail, password: this.registerPassword };
+      this.$http.post("users", data).then(res => {
+        this.loginEmail = this.registerEmail;
+        this.loginPassword = this.registerPassword;
+        this.login();
+      });
     }
+  }
 };
 </script>
