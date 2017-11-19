@@ -14,6 +14,7 @@ import ReportWizard from './reports/ReportWizard.vue';
 import ReportOverview from './reports/ReportOverview.vue';
 import ReportView from './reports/ReportView.vue';
 import QueryWizard from './queries/QueryWizard.vue';
+import CategoryManager from './categories/CategoryManager.vue';
 
 import 'jquery';
 import 'bootstrap';
@@ -24,6 +25,7 @@ var routes = [
     { path: '/accounts/:id/transactions', component: TransactionManager, props: true },
     { path: '/accounts', component: Accounts },
     { path: '/accounts/:id', component: AccountDetail, props: true },
+    { path: '/categories', component: CategoryManager },
     { path: '/home', name: 'home', component: LogIn },
     { path: '/configuration', component: QueryWizard },
     { path: '/expression-wizard', component: ExpressionWizard },
