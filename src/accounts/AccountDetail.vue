@@ -44,7 +44,7 @@ export default {
     },
     remove() {
       this.$http.delete("accounts/" + this.id).then(res => {
-        router.push("/accounts");
+        this.$router.push("/accounts");
       });
     },
     update() {
