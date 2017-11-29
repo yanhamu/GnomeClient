@@ -4,8 +4,8 @@
         <table class="table table-striped table-hover table-responsive table-condensed">
             <thead>
                 <tr>
-                    <th>Date</th>
-                    <th>Amount</th>
+                    <th class="col-xs-2" >Date</th>
+                    <th class="col-xs-2" >Amount</th>
                     <th>Categories</th>
                 </tr>
             </thead>

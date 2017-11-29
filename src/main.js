@@ -96,7 +96,7 @@ Vue.http.interceptors.push(function (request, next) {
 // filters
 Vue.filter('formatDate', function (value) {
     if (value)
-        return moment(String(value)).format('YYYY-MM-DD');
+        return moment(String(value)).format('DD.MM YYYY');
 });
 
 Vue.filter('yearMonth', function (value) {

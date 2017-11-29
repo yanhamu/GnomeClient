@@ -21,7 +21,7 @@
                     <td>Type</td>
                     <td>{{transaction.row.type}}</td>
                 </tr>
-                <tr v-for="(item, index) in transaction.row.fields" v-if="item != ''">
+                <tr v-for="(item, index) in transaction.row.fields" v-bind:key="index" v-if="item != ''">
                     <td>{{index}}</td>
                     <td>{{item}}</td>
                 </tr>
