@@ -29,8 +29,7 @@
   </div>
 </template>
 <script>
-
-import {store} from './main.js'
+import { store } from "./main.js";
 
 export default {
   name: "log-in",
@@ -42,12 +41,18 @@ export default {
       registerPassword: ""
     };
   },
+  created: function() {
+    if(store.state.isAuthetnicated){
+      this.$router.push('/dashboard');
+    }
+  },
   methods: {
     login: function() {
       var data = { username: this.loginEmail, password: this.loginPassword };
       this.$http.post("gettoken", data, { emulateJSON: true }).then(
         res => {
           store.setToken(res.body.access_token);
+          this.$router.push('/dashboard');
         },
         res => {
           store.setToken(null);

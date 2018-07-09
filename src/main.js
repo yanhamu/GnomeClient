@@ -15,6 +15,7 @@ import ReportOverview from './reports/ReportOverview.vue';
 import ReportView from './reports/ReportView.vue';
 import QueryWizard from './queries/QueryWizard.vue';
 import CategoryManager from './categories/CategoryManager.vue';
+import Dashboard from './dashboard/dashboard.vue';
 
 import 'jquery';
 import 'bootstrap';
@@ -31,7 +32,8 @@ var routes = [
     { path: '/expression-wizard', component: ExpressionWizard },
     { path: '/report-wizard', component: ReportWizard },
     { path: '/report-overview', component: ReportOverview },
-    { path: '/report-view/:id', name: 'report-view', component: ReportView, props: true },
+    { path: '/report-view/:id', name: 'report-view', component: ReportView },
+    { path: '/dashboard', name: 'dashboard', component: Dashboard, props: true },
     { path: '*', redirect: '/home' }
 ];
 

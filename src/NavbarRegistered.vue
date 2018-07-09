@@ -50,6 +50,7 @@ export default {
   methods: {
     logout: function() {
       store.setToken(null);
+      this.$router.push('/home');
     }
   }
 };
