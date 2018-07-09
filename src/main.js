@@ -67,7 +67,11 @@ if (t != null) {
 }
 
 Vue.use(VueResource);
+<<<<<<< HEAD
 Vue.http.options.root = 'http://localhost:5000/api';
+=======
+Vue.http.options.root = 'http://localhost:9020/api';
+>>>>>>> dc4233cf35ff47257f8b7046cbb079a01ccc11d2
 
 // interceptors
 Vue.http.interceptors.push(function (request, next) {

@@ -19,12 +19,10 @@
             <label for="name" class="col-sm-2 col-form-label">Color</label>
             <div class="col-sm-10">
                 <input class="form-control" type="text" v-model="category.color" >
+                <compact v-model="colors" />
             </div>
-            
-xxx
-<compact v-model="colors" />
 {{colors.hex}}
-
+{{hexColor}}
         </div>
         <div class="row">
             <div class="col-sm-offset-9 col-sm-3">
@@ -38,10 +36,19 @@ xxx
 <script>
 import { Compact } from "vue-color";
 export default {
+  created() {
+      this.colors.hex = null;
+  },
   data() {
     return {
       colors: {}
     };
+  },
+  computed: {
+    hexColor() {
+      this.category.color = this.colors.hex;
+      return this.colors.hex;
+    }
   },
   props: ["category", "allCategories"],
   methods: {

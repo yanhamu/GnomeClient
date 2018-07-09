@@ -38,7 +38,7 @@ export default {
       var data = { name: "new account", token: "" };
       this.$http.post("accounts", data).then(res => {
         var location = "/accounts/" + res.body.id;
-        router.push(location);
+        this.$router.push(location);
       });
     }
   },
